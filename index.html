@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voor Do ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #2f2a26;
+    color: #f5e6c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 400px;
+}
+
+/* STAPPEN */
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+/* AFBEELDING */
+img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+button {
+    margin-top: 20px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #a0522d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ANIMATIE */
+.fade {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- STEP 1 -->
+    <div id="step1" class="step active fade">
+        <h2>Happy Birthday ❤️</h2>
+        <p>Klaar voor iets leuks?</p>
+        <button onclick="nextStep(2)">Start →</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" class="step fade">
+        <h2>Gefeliciteerd lieve schat ❤️</h2>
+        <p>Met je 31e verjaardag!</p>
+        <button onclick="nextStep(3)">Verder →</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="step3" class="step fade">
+        <img src="stampede.jpg">
+        <h3>Weet je nog? 🤠</h3>
+        <button onclick="nextStep(4)">Verder →</button>
+    </div>
+
+    <!-- STEP 4 -->
+    <div id="step4" class="step fade">
+        <p>Ik weet dat je erg van country houdt...</p>
+        <p>Daarom heb ik een leuke verrassing voor je 😉</p>
+        <button onclick="nextStep(5)">Verder →</button>
+    </div>
+
+    <!-- STEP 5 -->
+    <div id="step5" class="step fade">
+        <img src="zach.jpg">
+        <h2>Zach Bryan 🎶</h2>
+        <p><strong>With Heaven On Tour</strong></p>
+        <p>📍 Philips Stadion, Eindhoven</p>
+        <p>📅 9 juni 2026</p>
+        <p>⏰ 18:15</p>
+        <p>🎟 Sec 1-K • Row 9 • Seats 20 - 21</p>
+        <p>Ik hou van je ❤️</p>
+    </div>
+
+</div>
+
+<script>
+function nextStep(stepNumber) {
+    document.querySelectorAll('.step').forEach(step => {
+        step.classList.remove('active');
+    });
+
+    const next = document.getElementById('step' + stepNumber);
+    next.classList.add('active');
+}
+</script>
+
+</body>
+</html>
